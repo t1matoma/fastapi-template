@@ -1,0 +1,12 @@
+certs/
+.venv/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+dist/
+*.sqlite3
+test.db
