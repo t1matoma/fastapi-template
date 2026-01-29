@@ -1,10 +1,9 @@
-from pydantic_settings import BaseSettings
+from pydantic import BaseModel, ConfigDict
 
 
-class TokenSchema(BaseSettings):
+class TokenSchema(BaseModel):
     access_token: str
     refresh_token: str | None = None
     token_type: str = "Bearer"
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
