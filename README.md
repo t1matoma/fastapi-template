@@ -4,42 +4,44 @@ A basic template for FastAPI projects with a predefined project structure and JW
 
 ## Package structure:
 
+.
+
 ├── docker-compose.yml
 ├── pyproject.toml
+├── uv.lock
 ├── README.md
-├── src
-│   ├── api
-│   │   ├── auth.py
-│   │   ├── dependencies.py
-│   │   ├── __init__.py
-│   ├── apps
-│   │   ├── auth
-│   │   │   ├── models
-│   │   │   │   ├── __init__.py
-│   │   │   │   └── user.py
-│   │   │   ├── repositories
-│   │   │   │   ├── __init__.py
-│   │   │   │   └── user.py
-│   │   │   ├── schemas
-│   │   │   │   ├── __init__.py
-│   │   │   │   ├── token.py
-│   │   │   │   └── user.py
-│   │   │   └── services
-│   │   │       ├── __init__.py
-│   │   │       └── user.py
-│   │   ├── __init__.py
-│   ├── __init__.py
-│   ├── main.py
-│   ├── settings
-│   │   ├── config.py
-│   │   ├── database.py
-│   │   ├── __init__.py
-│   └── utils
-│       ├── __init__.py
-│       ├── jwt.py
-│       ├── password.py
-└── uv.lock
-
+└── src
+├── main.py
+├── api
+│ ├── auth.py
+│ ├── dependencies.py
+│ └── init.py
+├── apps
+│ ├── auth
+│ │ ├── models
+│ │ │ ├── user.py
+│ │ │ └── init.py
+│ │ ├── repositories
+│ │ │ ├── user.py
+│ │ │ └── init.py
+│ │ ├── schemas
+│ │ │ ├── token.py
+│ │ │ ├── user.py
+│ │ │ └── init.py
+│ │ ├── services
+│ │ │ ├── user.py
+│ │ │ └── init.py
+│ │ └── init.py
+│ └── init.py
+├── settings
+│ ├── config.py
+│ ├── database.py
+│ └── init.py
+├── utils
+│ ├── jwt.py
+│ ├── password.py
+│ └── init.py
+└── init.py
 ## How to run:
 
 ### Create the `certs/` directory and generate RSA keys:
@@ -56,3 +58,4 @@ openssl rsa -pubout -in private.pem -out public.pem
 ```bash
 uv run uvicorn src.main:app --reload
 ```
+
