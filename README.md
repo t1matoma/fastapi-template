@@ -1,6 +1,6 @@
 # FastAPI Basic Template
 
-A basic template for FastAPI projects with a predefined project structure and JWT authentication using RS256.:
+A basic template for FastAPI projects with a predefined project structure and JWT authentication using RS256.
 
 ## Package structure:
 ```
@@ -59,6 +59,7 @@ openssl rsa -pubout -in private.pem -out public.pem
 ```bash
 uv run uvicorn src.main:app --reload
 ```
+
 
 
 
