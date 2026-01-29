@@ -2,11 +2,11 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from fastapi.security import OAuth2PasswordRequestForm, HTTPBearer
 
-from settings.database import get_db
-from apps.auth.schemas.user import UserSchema, UserCreateSchema
-from apps.auth.schemas.token import TokenSchema
-from apps.auth.services.user import UserService
-from api.dependencies import get_current_user, get_current_user_access, get_current_user_refresh
+from src.settings.database import get_db
+from src.apps.auth.schemas.user import UserSchema, UserCreateSchema
+from src.apps.auth.schemas.token import TokenSchema
+from src.apps.auth.services.user import UserService
+from src.api.dependencies import get_current_user, get_current_user_access, get_current_user_refresh
 
 
 http_bearer = HTTPBearer(auto_error=False)
@@ -60,7 +60,7 @@ def register(
     db: Session = Depends(get_db)
 ):
     service = UserService(db)
-    user = service.create_user(user_data.username, user_data.pasword)
+    user = service.create_user(user_data.username, user_data.password)
     if not user:
         raise HTTPException(status_code=400, detail="Username already registered")
     return UserSchema(username=user.username)

@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 
-from settings.config import get_settings
-from api.auth import router as auth_router
-from settings.database import Base, engine
+from src.settings.config import get_settings
+from src.api.auth import router as auth_router
+from src.settings.database import Base, engine
 
 
 Base.metadata.create_all(bind=engine)

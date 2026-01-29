@@ -2,7 +2,7 @@ from datetime import timedelta, datetime
 
 import jwt
 
-from settings.config import get_settings
+from src.settings.config import get_settings
 
 
 settings = get_settings()

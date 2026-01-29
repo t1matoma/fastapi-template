@@ -1,6 +1,7 @@
-from ..models.user import User
-from utils.password import hash_password
 from sqlalchemy.orm import Session
+
+from src.apps.auth.models.user import User
+from src.utils.password import hash_password
 
 
 class UserRepository:

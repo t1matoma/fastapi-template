@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
 
-from ..repositories.user import UserRepository
-from ..models.user import User
-from utils.password import verify_password
-from utils.jwt import encode_jwt
+from src.apps.auth.repositories.user import UserRepository
+from src.apps.auth.models.user import User
+from src.utils.password import verify_password
+from src.utils.jwt import encode_jwt
 
 
 class UserService:
