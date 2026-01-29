@@ -14,9 +14,6 @@ A basic template for FastAPI projects with a predefined project structure and JW
 │   │   ├── auth.py
 │   │   ├── dependencies.py
 │   │   ├── __init__.py
-│   │   └── ── auth.cpython-312.pyc
-│   │       ├── dependencies.cpython-312.pyc
-│   │       └── __init__.cpython-312.pyc
 │   ├── apps
 │   │   ├── auth
 │   │   │   ├── models
@@ -62,5 +59,6 @@ openssl rsa -pubout -in private.pem -out public.pem
 ```bash
 uv run uvicorn src.main:app --reload
 ```
+
 
 
